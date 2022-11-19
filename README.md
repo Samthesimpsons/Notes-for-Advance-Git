@@ -65,3 +65,18 @@ Now to push:
 
 If we created a new feature branch and edited files on, add and commit there. Now if we switch back to main branch, the changes are not there.
 
+1. ```bash
+   # Assuming feature branch name is feature_branch
+   # Note the -u to set a new upstream
+   git push -u origin feature_branch
+   ```
+
+   Then accordingly do a pull request on github, merge and delete if needed. If we delete the branch on remote repository, good practise to also remove locally.
+
+    ``` bash
+    git branch -d feature_branch
+
+    git checkout main
+
+    git pull
+    ```
