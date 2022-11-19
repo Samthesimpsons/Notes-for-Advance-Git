@@ -1,5 +1,7 @@
 # Git Cheatsheet
 
+## Basics
+
 ```bash
 # To view hidden files too in directory
 ls -la
@@ -35,7 +37,7 @@ git commit -m "Added index.html" -m "Some Description"
 git remote -v
 ```
 
-Now to push:
+## Git Pushing
 
 1. To push to an empty remote repository, after adds and commits
 
@@ -63,9 +65,12 @@ Now to push:
    git push -u origin main
    ```
 
+## Feature Branching
+
 If we created a new feature branch and edited files on, add and commit there. Now if we switch back to main branch, the changes are not there.
 
 1. If we are done with the feature branch
+
    ```bash
    # Assuming feature branch name is feature_branch
    # Note the -u to set a new upstream
@@ -77,4 +82,14 @@ If we created a new feature branch and edited files on, add and commit there. No
 
    # Then next to delete the local feature branch
    git branch -D feature_branch
+   ```
+
+2. As changes are made to main by other developers, we do not want to be behind too much. So we want to keep our local main up to date, and then also use merge to keep our feature_branch up to date.
+
+   ```bash
+   git checkout main
+   git pull
+
+   git checkout feature_branch
+   git merge main
    ```
