@@ -84,7 +84,7 @@ If we created a new feature branch and edited files on, add and commit there. No
    git branch -D feature_branch
    ```
 
-2. As changes are made to main by other developers, we do not want to be behind too much. So we want to keep our local main up to date, and then also use merge to keep our feature_branch up to date.
+2. As changes are made to main by other developers, we do not want to be behind too much. So we want to keep our local main up to date, and then also use merge to keep our feature_branch up to date. However,
 
    ```bash
    git checkout main
