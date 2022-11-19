@@ -48,4 +48,6 @@ Now to push:
     # The remote repository branch name will be called main too
     git push -u origin main
     ```
-2. 
+2. If we cloned from a remote repository and want to commit from our local machine for the first time
+
+    
