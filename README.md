@@ -22,12 +22,12 @@ git branch
 
 # To rename the current branch e.g. to main
 git branch -M main
-```
 
-To commit locally
-
-```bash
+# To commit locally
 git commit -m "Added index.html" -m "Some Description"
+
+# To view all remotes
+git remote -v
 ```
 
 Now to push:
@@ -37,11 +37,15 @@ Now to push:
     Note that ```origin``` is the standard naming convention of the remote repository ID we are linking to. We can even add multiple remotes.
 
     ```bash
+    # Adding the remote repository with an ID called origin
     git remote add origin https://github.com/Samthesimpsons/git-demo.git
 
+    # Rename the current default branch name of master to main
     git branch -M main
 
+    # Push to remote repository the local main branch
     # -u sets upstream, such that in the future we will push to the origin main just by saying git push
+    # The remote repository branch name will be called main too
     git push -u origin main
     ```
 2. 
