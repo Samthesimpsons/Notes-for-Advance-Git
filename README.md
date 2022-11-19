@@ -103,5 +103,6 @@ If we created a new feature branch and edited files on, add and commit there. No
    # =======
    # ...
    # >>> main
-   # So make the edits and then commi them
+   # So make the edits and then commit them
+   git commit -am "Settled merge conflicts"
    ```
