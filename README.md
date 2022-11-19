@@ -34,8 +34,14 @@ Now to push:
 
 1. To push to an empty remote repository, after add and commit
 
+    Note that ```origin``` is the standard naming convention of the remote repository ID we are linking to. We can even add multiple remotes.
+
     ```bash
     git remote add origin https://github.com/Samthesimpsons/git-demo.git
+
     git branch -M main
+
+    # -u sets upstream, such that in the future we will push to the origin main just by saying git push
+    git push -u origin main
     ```
 2. 
