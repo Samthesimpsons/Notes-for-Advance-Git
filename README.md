@@ -106,3 +106,5 @@ If we created a new feature branch and edited files on, add and commit there. No
    # So make the edits and then commit them
    git commit -am "Settled merge conflicts"
    ```
+
+   So now the local main branch should be up to date with the remote one, and our local feature branch is updated with the changes from the local updated main branch too, plus our edits in the merge conflict.
