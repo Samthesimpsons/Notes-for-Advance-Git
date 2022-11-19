@@ -84,7 +84,7 @@ If we created a new feature branch and edited files on, add and commit there. No
    git branch -D feature_branch
    ```
 
-2. As changes are made to main by other developers, we do not want to be behind too much. So we want to keep our local main up to date, and then also use merge to keep our feature_branch up to date. However,
+2. As changes are made to main by other developers, we do not want to be behind too much. So we want to keep our local main up to date, and then also use merge to keep our feature_branch up to date. However, there might be merge conflicts between your local feature branch and the updated local main with the other developers edits.
 
    ```bash
    # Updating our main branch
@@ -96,4 +96,12 @@ If we created a new feature branch and edited files on, add and commit there. No
    # And am inside feature_branch to commit our changes inside the feature branch
    git commit -am "update index.html"
    git merge main
+
+   # However there will be conflicts which will be shown in the file itself
+   # <<< HEAD
+   # ...
+   # =======
+   # ...
+   # >>> main
+   # So make the edits and then commi them
    ```
