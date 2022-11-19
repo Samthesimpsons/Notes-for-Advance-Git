@@ -62,3 +62,6 @@ Now to push:
    # The local repository branch name will be called main since the remote repository branch we cloned from is called main too
    git push -u origin main
    ```
+
+If we created a new feature branch and edited files on, add and commit there. Now if we switch back to main branch, the changes are not there.
+
