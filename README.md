@@ -177,3 +177,10 @@ For branching understand the business what they are using, etc GitFlow, GithubFl
 ## Git Forking
 
 Create a fork is our own copy of the original repository and allows pull request to the main open repository for the main contributor to review.
+
+## Git Rebase
+
+Do not use Rebase on commits that are already pushed to remote repository. Use it for cleaning up local commit history. 
+
+https://www.atlassian.com/git/tutorials/merging-vs-rebasing
+
