@@ -75,14 +75,14 @@ git remote -v
 
 If we created a new feature branch and edited files on, add and commit there. Now if we switch back to main branch, the changes are not there.
 
-If we are done with the feature branch
+If we are done with the feature branch, and want a senior developer to review it via a pull request and then merge it to the remote repository main branch.
 
 ```bash
 # Assuming feature branch name is feature_branch
 # Note the -u to set a new upstream
 git push -u origin feature_branch
 
-# After pull request, merge and deleted on remote repository. Time to update local main
+# After pull request, merge and deleted on remote repository. Time to update our local main
 git checkout main
 git pull
 
@@ -90,11 +90,48 @@ git pull
 git branch -D feature_branch
 ```
 
+However, if it is a personal project. We would want to merge feature_branch directly into our local main branch
+
+```bash
+git checkout main
+git merge feature_branch
+
+git branch -D feature_branch
+```
+
+The result is
+m1 -> m2 -> m3 -> c1
+----> f1 -> f2
+
+However, this creates an additional merge commit (c1), and contains the commits of the feature branch (f1, f2). What if we want to squash all the feature commits into one additional merge commit instead (c1\*).
+
+```bash
+git checkout main
+git merge --squash feature_branch
+
+git branch -D feature_branch
+```
+
+The result is
+m1 -> m2 -> m3 -> c1\*
+
+However, again since this is on a local repository. We might want to streamline the entire thing into one branch instead while not squashing them. We can rebase the main branch. Consider the base as the common commit between the 2 branches. Now we simply rebase the common commit of the main branch to the last commit of the feature branch.
+
+```bash
+git checkout main
+git rebase feature_branch
+
+git branch -D feature_branch
+```
+
+The result is
+m1 -> f1 -> f2 -> m2 -> m3
+
 ## Git Merge Conflicts
 
 As changes are made to main by other developers, we do not want to be behind too much. So we want to keep our local main up to date, and then also use merge to keep our feature_branch up to date. Yet, there might be merge conflicts between your local feature branch and the updated local main with the other developers edits.
 
-This is merging main into feature.
+Note this is merging main into feature.
 
 ```bash
 # Updating our main branch
@@ -118,11 +155,6 @@ git commit -am "Settled merge conflicts"
 ```
 
 So now the local main branch should be up to date with the remote one, and our local feature branch is updated with the changes from the local updated main branch too, plus our edits in the merge conflict.
-
-E.g.
-main:   
-m1 -> m2 -> m3 -> m4       
-feature_branch: m2 -> f1 -> f2 -> merged1 
 
 Sometimes we can undo it and start fresh instead of solving the merge conflict
 
