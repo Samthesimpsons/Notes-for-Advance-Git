@@ -121,7 +121,7 @@ So now the local main branch should be up to date with the remote one, and our l
 
 E.g.
 main:   
-m1 -> m2 -> m3 -> m4   
+m1 -> m2 -> m3 -> m4       
 feature_branch: m2 -> f1 -> f2 -> merged1 
 
 Sometimes we can undo it and start fresh instead of solving the merge conflict
