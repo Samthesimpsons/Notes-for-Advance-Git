@@ -1,4 +1,4 @@
-# Git Cheatsheet
+# Git Guide 
 
 **Tutorials**
 
@@ -43,7 +43,9 @@ git commit -m "Added index.html" -m "Some Description"
 git remote -v
 ```
 
-## Git Pushing
+## Git Intermediate 
+
+### Git Pushing
 
 1. To push to an empty remote repository, after adds and commits
 
@@ -71,7 +73,7 @@ git remote -v
    git push -u origin main
    ```
 
-## Feature Branching
+### Feature Branching
 
 If we created a new feature branch and edited files on, add and commit there. Now if we switch back to main branch, the changes are not there.
 
@@ -127,7 +129,7 @@ git branch -D feature_branch
 The result is
 m1 -> f1 -> f2 -> m2 -> m3
 
-## Git Merge Conflicts
+### Git Merge Conflicts
 
 As changes are made to main by other developers, we do not want to be behind too much. So we want to keep our local main up to date, and then also use merge to keep our feature_branch up to date. Yet, there might be merge conflicts between your local feature branch and the updated local main with the other developers edits.
 
@@ -166,7 +168,7 @@ git merge main
 git merge --abort
 ```
 
-## Git Undoing
+### Git Undoing
 
 1. To undo stages (e.g. we added index.html)
 
@@ -196,7 +198,7 @@ git merge --abort
    git reset --hard <HASH KEY>
    ```
 
-## Git Perfect Commit and Branching
+### Git Perfect Commit and Branching
 
 Using patch, git goes through each chunk of change for us to choose (Y for Yes, N for No, etc.)
 
@@ -213,12 +215,14 @@ _Note using git commit, after the first line, the second line after the newline 
 
 For branching understand the business what they are using, etc GitFlow, GithubFlow
 
-## Git Forking
+### Git Forking
 
 Create a fork is our own copy of the original repository and allows pull request to the main open repository for the main contributor to review.
 
-## Git Rebase
+### Git Rebase
 
 Do not use Rebase on commits that are already pushed to remote repository. Use it for cleaning up local commit history.
 
 https://www.atlassian.com/git/tutorials/merging-vs-rebasing
+
+## Advanced Git
