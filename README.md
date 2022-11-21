@@ -44,6 +44,9 @@ git commit -m "Added index.html" -m "Some Description"
 
 # To view all remotes
 git remote -v
+
+# To view oneliner of git log
+git log --oneline
 ```
 
 ## Git Intermediate 
