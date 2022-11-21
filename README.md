@@ -120,7 +120,8 @@ git commit -am "Settled merge conflicts"
 So now the local main branch should be up to date with the remote one, and our local feature branch is updated with the changes from the local updated main branch too, plus our edits in the merge conflict.
 
 E.g.
-main: m1 -> m2 -> m3 -> m4
+main:   
+m1 -> m2 -> m3 -> m4   
 feature_branch: m2 -> f1 -> f2 -> merged1 
 
 Sometimes we can undo it and start fresh instead of solving the merge conflict
