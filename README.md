@@ -1,4 +1,4 @@
-# Git Guide 
+# Git Guide
 
 **Tutorials**
 
@@ -49,7 +49,7 @@ git remote -v
 git log --oneline
 ```
 
-## Git Intermediate 
+## Git Intermediate
 
 ### Git Pushing
 
@@ -239,13 +239,29 @@ https://www.atlassian.com/git/tutorials/merging-vs-rebasing
 
 If we want to change the latest commit message
 
-``` bash
+```bash
 git commit --amend -m "An Updated commit message"
 ```
 
-If we want to change a earlier commit
+If we want to change an earlier commit, squash them together etc
 
 ```bash
 git rebase -i HEAD~3
-``` 
+# Follow the UI instructions, then edit save and close the text editor
+```
 
+### Git Cherry Picking
+
+Only use in very specific use cases, e.g. we commit on main branch accidentally, when it is supposed to be on a feature branch.
+
+```bash
+git checkout feature_branch
+git cherry-pick <HASH commit from main branch>
+
+git checkout main
+git reset --hard HEAD~1
+```
+
+### Git Reflog
+
+Git's diary, a protocol of HEAD pointer movements.
