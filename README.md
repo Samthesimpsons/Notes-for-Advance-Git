@@ -1,9 +1,10 @@
 # Git Cheatsheet
 
 **Tutorials**
+
 - Basics: https://www.youtube.com/watch?v=RGOj5yH7evk
 - Basics/Intermediate: https://www.youtube.com/watch?v=Uszj_k0DGsg&t=411s
-- Advanced: 
+- Advanced:
 
 ## Basics
 
@@ -153,7 +154,8 @@ git add -p index.html
 ```
 
 The perfect commit message:
+
 1. Subject: Concise summary
 2. Body: More details (AS-IS)
 
-*Note using git commit, after the first line, the second line after the newline is the body*
+_Note using git commit, after the first line, the second line after the newline is the body_
