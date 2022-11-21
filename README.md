@@ -94,6 +94,8 @@ git branch -D feature_branch
 
 As changes are made to main by other developers, we do not want to be behind too much. So we want to keep our local main up to date, and then also use merge to keep our feature_branch up to date. Yet, there might be merge conflicts between your local feature branch and the updated local main with the other developers edits.
 
+This is merging main into feature.
+
 ```bash
 # Updating our main branch
 git checkout main
@@ -116,6 +118,10 @@ git commit -am "Settled merge conflicts"
 ```
 
 So now the local main branch should be up to date with the remote one, and our local feature branch is updated with the changes from the local updated main branch too, plus our edits in the merge conflict.
+
+E.g.
+main: m1 -> m2 -> m3 -> m4
+feature_branch: m2 -> f1 -> f2 -> merged1
 
 Sometimes we can undo it and start fresh instead of solving the merge conflict
 
@@ -180,7 +186,6 @@ Create a fork is our own copy of the original repository and allows pull request
 
 ## Git Rebase
 
-Do not use Rebase on commits that are already pushed to remote repository. Use it for cleaning up local commit history. 
+Do not use Rebase on commits that are already pushed to remote repository. Use it for cleaning up local commit history.
 
 https://www.atlassian.com/git/tutorials/merging-vs-rebasing
-
