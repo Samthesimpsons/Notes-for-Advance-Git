@@ -144,7 +144,7 @@ git checkout feature_branch
 git commit -am "update index.html"
 git merge main
 
-# However there will be conflicts which will be shown in the file itself
+# However there will be conflicts which will be shown in the file itself, for this e.g. index.html
 # <<< HEAD (crrrent branch)
 # ...
 # =======
