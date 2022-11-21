@@ -75,45 +75,57 @@ git remote -v
 
 If we created a new feature branch and edited files on, add and commit there. Now if we switch back to main branch, the changes are not there.
 
-1. If we are done with the feature branch
+If we are done with the feature branch
 
-   ```bash
-   # Assuming feature branch name is feature_branch
-   # Note the -u to set a new upstream
-   git push -u origin feature_branch
+```bash
+# Assuming feature branch name is feature_branch
+# Note the -u to set a new upstream
+git push -u origin feature_branch
 
-   # After pull request, merge and deleted on remote repository. Time to update local main
-   git checkout main
-   git pull
+# After pull request, merge and deleted on remote repository. Time to update local main
+git checkout main
+git pull
 
-   # Then next to delete the local feature branch
-   git branch -D feature_branch
-   ```
+# Then next to delete the local feature branch
+git branch -D feature_branch
+```
 
-2. As changes are made to main by other developers, we do not want to be behind too much. So we want to keep our local main up to date, and then also use merge to keep our feature_branch up to date. Yet, there might be merge conflicts between your local feature branch and the updated local main with the other developers edits.
+## Git Merge Conflicts
 
-   ```bash
-   # Updating our main branch
-   git checkout main
-   git pull
+As changes are made to main by other developers, we do not want to be behind too much. So we want to keep our local main up to date, and then also use merge to keep our feature_branch up to date. Yet, there might be merge conflicts between your local feature branch and the updated local main with the other developers edits.
 
-   git checkout feature_branch
-   # Shortcut if the file is the only modified
-   # And am inside feature_branch to commit our changes inside the feature branch
-   git commit -am "update index.html"
-   git merge main
+```bash
+# Updating our main branch
+git checkout main
+git pull
 
-   # However there will be conflicts which will be shown in the file itself
-   # <<< HEAD
-   # ...
-   # =======
-   # ...
-   # >>> main
-   # So make the edits and then commit them
-   git commit -am "Settled merge conflicts"
-   ```
+git checkout feature_branch
+# Shortcut if the file is the only modified
+# And am inside feature_branch to commit our changes inside the feature branch
+git commit -am "update index.html"
+git merge main
 
-   So now the local main branch should be up to date with the remote one, and our local feature branch is updated with the changes from the local updated main branch too, plus our edits in the merge conflict.
+# However there will be conflicts which will be shown in the file itself
+# <<< HEAD (crrrent branch)
+# ...
+# =======
+# ...
+# >>> main (branch we are merging into)
+# So make the edits and then commit them
+git commit -am "Settled merge conflicts"
+```
+
+So now the local main branch should be up to date with the remote one, and our local feature branch is updated with the changes from the local updated main branch too, plus our edits in the merge conflict.
+
+Sometimes we can undo it and start fresh instead of solving the merge conflict
+
+```bash
+#...
+git merge main
+
+# Now after the conflict
+git merge --abort
+```
 
 ## Git Undoing
 
@@ -123,7 +135,7 @@ If we created a new feature branch and edited files on, add and commit there. No
    git reset index.html
    ```
 
-2. What if want to unstage the changes from the most recent commit instead
+2. What if we want to unstage the changes from the most recent commit instead
 
    ```bash
    # HEAD is the current commit, 1 means to reset back to 1 commit before the HEAD
@@ -145,7 +157,7 @@ If we created a new feature branch and edited files on, add and commit there. No
    git reset --hard <HASH KEY>
    ```
 
-## Git Perfect Commit
+## Git Perfect Commit and Branching
 
 Using patch, git goes through each chunk of change for us to choose (Y for Yes, N for No, etc.)
 
@@ -159,3 +171,9 @@ The perfect commit message:
 2. Body: More details (AS-IS)
 
 _Note using git commit, after the first line, the second line after the newline is the body_
+
+For branching understand the business what they are using, etc GitFlow, GithubFlow
+
+## Git Forking
+
+Create a fork is our own copy of the original repository and allows pull request to the main open repository for the main contributor to review.
