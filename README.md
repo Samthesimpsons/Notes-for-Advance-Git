@@ -4,7 +4,10 @@
 
 - Basics: https://www.youtube.com/watch?v=RGOj5yH7evk
 - Basics/Intermediate: https://www.youtube.com/watch?v=Uszj_k0DGsg&t=411s
-- Advanced:
+- Advanced: https://www.youtube.com/watch?v=qsTthZi23VE&t=1827s
+
+**Advanced Readings:**
+Working with Git remotes and pushing to multiple Git repositories: https://jigarius.com/blog/multiple-git-remote-repositories
 
 ## Basics
 
@@ -221,8 +224,24 @@ Create a fork is our own copy of the original repository and allows pull request
 
 ### Git Rebase
 
-Do not use Rebase on commits that are already pushed to remote repository. Use it for cleaning up local commit history.
+> Do not use Rebase on commits that are already pushed to remote repository. Use it for cleaning up local commit history.
 
 https://www.atlassian.com/git/tutorials/merging-vs-rebasing
 
 ## Advanced Git
+
+### Git Interactive Rebasing
+
+> Do not use Interactive Rebase on commits that are already pushed to remote repository. Use it for cleaning up local commit history.
+
+If we want to change the latest commit message
+
+``` bash
+git commit --amend -m "An Updated commit message"
+```
+
+If we want to change a earlier commit
+
+```bash
+git rebase -i HEAD~3
+``` 
