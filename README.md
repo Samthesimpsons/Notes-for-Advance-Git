@@ -9,6 +9,9 @@
 **Advanced Readings:**
 Working with Git remotes and pushing to multiple Git repositories: https://jigarius.com/blog/multiple-git-remote-repositories
 
+**Notes**
+For my first role as a Data Scientist, I also picked up **VIM** and **Nano** editors.
+
 ## Basics
 
 ```bash
