@@ -12,6 +12,8 @@ Working with Git remotes and pushing to multiple Git repositories: https://jigar
 **Notes**
 For my first role as a Data Scientist, I also picked up **VIM** and **Nano** editors.
 
+Not added yet, is using **tags** for version controlling of deployed packages.
+
 ## Basics
 
 ```bash
